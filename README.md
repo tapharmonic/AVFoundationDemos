@@ -17,7 +17,7 @@ The Capture demo shows how to build a simple video capture app using AVCaptureSe
 
 ### Compose ###
 The Compose demo is a looping audio player illustrating how to build a multi-track composition.  The key
-APIs it demos are AVMutableComposition and AVAudioMix.
+APIs it demos are AVMutableComposition and AVMutableAudioMix.
 
 ![compose demo](https://raw.github.com/tapharmonic/AVFoundationDemos/master/ScreenShots/compose.png)
 
