@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Playback View Controller - Playback-->
+        <scene sceneID="1rP-OV-fxw">
+            <objects>
+                <viewController id="L1r-5Q-Pge" customClass="THPlaybackViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fug-nh-h5b" userLabel="View" customClass="THStoneView">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="a9L-hQ-3GR">
+                                <rect key="frame" x="287" y="27" width="275" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="pb_play_icon.png" backgroundImage="pb_ap_button_background.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" identifier="streamingSegue" id="vlc-tv-hgf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mrZ-MS-ndr">
+                                <rect key="frame" x="6" y="27" width="273" height="193"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="pb_play_icon.png" backgroundImage="pb_charlie_button_background.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="modal" identifier="localSegue" id="TJU-0w-I2q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Local Playback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lQE-dm-WRS">
+                                <rect key="frame" x="77" y="211" width="131" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.86326132015306123" green="0.86326132015306123" blue="0.86326132015306123" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.1323939732142857" green="0.1323939732142857" blue="0.1323939732142857" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="-1" height="-2"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Streaming Playback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1C1-xZ-iHf">
+                                <rect key="frame" x="338" y="211" width="172" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.86326132015306123" green="0.86326132015306123" blue="0.86326132015306123" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.23808195153061229" green="0.23808195153061229" blue="0.23808195153061229" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Playback" id="JLV-V2-Msu"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="localLabel" destination="lQE-dm-WRS" id="3TR-wZ-2Ci"/>
+                        <outlet property="localPlaybackButton" destination="mrZ-MS-ndr" id="Q4j-Tc-9sx"/>
+                        <outlet property="remoteLabel" destination="1C1-xZ-iHf" id="iml-eh-fLh"/>
+                        <outlet property="remotePlaybackButton" destination="a9L-hQ-3GR" id="X4U-Iu-fjc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdr-hr-syp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="72"/>
+        </scene>
+        <!--Capture View Controller - Capture-->
+        <scene sceneID="9Ek-nA-O3v">
+            <objects>
+                <viewController id="VTH-4g-vA0" customClass="THCaptureViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fpf-hR-E9K">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="DcV-Yw-6VA" userLabel="Simulator View" customClass="THWhiteView">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Capture demo must be run on a device" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e5t-KK-AD5">
+                                        <rect key="frame" x="113" y="94" width="341" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="0.0" height="1"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="e1Y-TO-xU9" userLabel="Preview View">
+                                <rect key="frame" x="0.0" y="0.0" width="476" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="camera_bezel.png" id="mLo-ZT-cnn" userLabel="Camera Bezel Background">
+                                <rect key="frame" x="476" y="0.0" width="92" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="r53-9Z-CGC" userLabel="Record Button" customClass="THCaptureButton">
+                                <rect key="frame" x="482" y="10" width="82" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="record_indicator_off.png" backgroundImage="camera_button_background.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startRecording:" destination="VTH-4g-vA0" eventType="touchUpInside" id="gKM-Wx-wBi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="W7U-q0-cnk" userLabel="Toggle Button">
+                                <rect key="frame" x="482" y="67" width="82" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="camera_switch_icon.png" backgroundImage="camera_button_background.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleCameras:" destination="VTH-4g-vA0" eventType="touchUpInside" id="PIx-WV-RtM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Capture" id="nJX-hE-tIa"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="previewView" destination="e1Y-TO-xU9" id="fWC-Rt-Vxt"/>
+                        <outlet property="simulatorView" destination="DcV-Yw-6VA" id="at7-iD-Wix"/>
+                        <outlet property="toggleCameraButton" destination="W7U-q0-cnk" id="nRo-B5-53o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TIp-hE-dQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="600"/>
+        </scene>
+        <!--Player View Controller - Playback-->
+        <scene sceneID="11">
+            <objects>
+                <viewController storyboardIdentifier="THPlayerViewController" title="Playback" wantsFullScreenLayout="YES" definesPresentationContext="YES" id="2" customClass="THPlayerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="baO-E6-hSu">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="3iS-fj-mlP" userLabel="THPlayerView" customClass="THPlayerView">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="340"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="yLj-mh-MxI" userLabel="THPlaybackOverlayView">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="340"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="mnZ-l7-hTg">
+                                                <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <items>
+                                                    <navigationItem title="Title" id="01K-Go-Tft">
+                                                        <barButtonItem key="leftBarButtonItem" title="Close" id="qps-x7-Boj">
+                                                            <connections>
+                                                                <action selector="closePlayer:" destination="2" id="1d6-ae-NLb"/>
+                                                            </connections>
+                                                        </barButtonItem>
+                                                    </navigationItem>
+                                                </items>
+                                            </navigationBar>
+                                            <view contentMode="scaleToFill" id="YrK-EZ-Oug" userLabel="Transport Container">
+                                                <rect key="frame" x="84" y="210" width="400" height="82"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" id="ozv-bC-2Qv" userLabel="THTransportView" customClass="THTransportView">
+                                                        <rect key="frame" x="0.0" y="36" width="407" height="47"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tp_transport_base.png" id="exa-b6-YdE" userLabel="Transport BG Image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="407" height="47"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CNm-c8-tkP" userLabel="Play Button">
+                                                                <rect key="frame" x="2" y="1" width="50" height="45"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <state key="normal" image="tp_play_button.png">
+                                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="playButtonTapped:" destination="2" eventType="touchUpInside" id="XGq-RG-e68"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Um-6g-zTB" userLabel="Pause Button">
+                                                                <rect key="frame" x="3" y="1" width="50" height="45"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <state key="normal" image="tp_pause_button.png">
+                                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <state key="highlighted">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="pauseButtonTapped:" destination="2" eventType="touchUpInside" id="Ehg-UZ-5VT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <slider contentMode="scaleAspectFit" contentHorizontalAlignment="right" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="DYB-Uj-qaa">
+                                                                <rect key="frame" x="105" y="12" width="242" height="23"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <connections>
+                                                                    <action selector="scrubbing:" destination="2" eventType="valueChanged" id="hVd-QT-uM2"/>
+                                                                    <action selector="scrubbingDidEnd:" destination="2" eventType="touchUpInside" id="tcG-hU-n3I"/>
+                                                                    <action selector="scrubbingDidStart:" destination="2" eventType="touchDown" id="jiu-dN-lLL"/>
+                                                                </connections>
+                                                            </slider>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymE-gk-rS3" userLabel="Time Label">
+                                                                <rect key="frame" x="65" y="14" width="34" height="16"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1BT-Oc-4fK" userLabel="Duration Label">
+                                                                <rect key="frame" x="356" y="15" width="34" height="16"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <connections>
+                                                            <outlet property="currentTimeLabel" destination="ymE-gk-rS3" id="OOy-zc-bYb"/>
+                                                            <outlet property="infoView" destination="HbM-DR-kIm" id="TgR-0Y-pFw"/>
+                                                            <outlet property="pauseButton" destination="8Um-6g-zTB" id="Ysy-VE-ulV"/>
+                                                            <outlet property="playButton" destination="CNm-c8-tkP" id="nbP-Qg-LHP"/>
+                                                            <outlet property="remainingTimeLabel" destination="1BT-Oc-4fK" id="4KY-nX-19W"/>
+                                                            <outlet property="scrubberSlider" destination="DYB-Uj-qaa" id="RbI-Lk-dNb"/>
+                                                            <outlet property="scrubbingTimeLabel" destination="iQR-q9-qU6" id="14m-s8-1XJ"/>
+                                                        </connections>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" id="HbM-DR-kIm" userLabel="Info View">
+                                                        <rect key="frame" x="74" y="0.0" width="85" height="35"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="left" image="tp_info_popup.png" id="45v-lV-Y29" userLabel="Popup Image">
+                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="35"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </imageView>
+                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iQR-q9-qU6" userLabel="Time Label">
+                                                                <rect key="frame" x="21" y="4" width="42" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="iKK-vc-Iej" appends="YES" id="WMp-DD-cQX"/>
+                        </connections>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="navigationBar" destination="mnZ-l7-hTg" id="Rfe-EL-WCZ"/>
+                        <outlet property="overlayView" destination="yLj-mh-MxI" id="WFL-sG-0db"/>
+                        <outlet property="playerView" destination="3iS-fj-mlP" id="xn7-ZV-TWa"/>
+                        <outlet property="transportView" destination="ozv-bC-2Qv" id="vvc-hk-blz"/>
+                        <outlet property="view" destination="baO-E6-hSu" id="5ab-ri-eTT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="iKK-vc-Iej">
+                    <connections>
+                        <action selector="togglePlaybackControls:" destination="2" id="bPj-Nf-BaY"/>
+                        <outlet property="delegate" destination="2" id="BQA-Md-5JU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="479" y="72"/>
+        </scene>
+        <!--Compose View Controller - Compose-->
+        <scene sceneID="X1r-8e-J2Z">
+            <objects>
+                <viewController id="DZU-Ih-Vn5" customClass="THComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TNG-8c-fv3" customClass="THStoneView">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
+                        <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="43e-Os-cro">
+                                <rect key="frame" x="10" y="70" width="549" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DZU-Ih-Vn5" id="BVS-P3-rxP"/>
+                                </connections>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="200" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="HCQ-D9-H8q">
+                                <rect key="frame" x="10" y="138" width="549" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DZU-Ih-Vn5" id="r5Y-q8-IgF"/>
+                                </connections>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="300" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" id="9Mh-OW-n11">
+                                <rect key="frame" x="10" y="206" width="549" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DZU-Ih-Vn5" id="BzZ-pb-rbX"/>
+                                </connections>
+                            </scrollView>
+                            <view contentMode="scaleToFill" id="rgu-3o-G4a" userLabel="Controls View">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="edit_toolbar.png" id="js7-yW-6pA" userLabel="Controls View Background">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gAu-3H-IdG" userLabel="Mix Button">
+                                        <rect key="frame" x="10" y="10" width="45" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="2"/>
+                                        <state key="normal" image="co_mix_button_icon.png" backgroundImage="co_square_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showMixer:" destination="DZU-Ih-Vn5" eventType="touchUpInside" id="vWB-2n-K0h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KcG-Bo-9Ay" userLabel="Export Button">
+                                        <rect key="frame" x="513" y="10" width="45" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                        <state key="normal" image="co_export_button_icon.png" backgroundImage="co_square_button.png">
+                                            <color key="titleColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exportComposition:" destination="DZU-Ih-Vn5" eventType="touchUpInside" id="FgR-u7-5Pf"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nBb-Sr-GAV" userLabel="Stop Button">
+                                        <rect key="frame" x="255" y="2" width="57" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="co_stop_icon.png" backgroundImage="co_round_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopPlayer:" destination="DZU-Ih-Vn5" eventType="touchUpInside" id="jTm-qo-hoZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4aT-Nq-oBJ" userLabel="Play Button">
+                                        <rect key="frame" x="255" y="2" width="57" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="co_play_icon.png" backgroundImage="co_round_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startPlayer:" destination="DZU-Ih-Vn5" eventType="touchUpInside" id="00V-XN-Hm6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Compose" id="JG1-Uq-Ij8"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bassScrollView" destination="HCQ-D9-H8q" id="2cM-O2-Ogc"/>
+                        <outlet property="controlsView" destination="rgu-3o-G4a" id="AFb-cb-azK"/>
+                        <outlet property="drumsScrollView" destination="9Mh-OW-n11" id="0tl-IY-ZyR"/>
+                        <outlet property="exportButton" destination="KcG-Bo-9Ay" id="m19-BV-xgj"/>
+                        <outlet property="guitarScrollView" destination="43e-Os-cro" id="HNB-vM-WPD"/>
+                        <outlet property="mixButton" destination="gAu-3H-IdG" id="MHw-tK-Wha"/>
+                        <outlet property="playButton" destination="4aT-Nq-oBJ" id="6YI-v8-owf"/>
+                        <outlet property="stopButton" destination="nBb-Sr-GAV" id="yUY-6C-Itw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="veG-RR-sLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-322" y="1121"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="15">
+            <objects>
+                <tabBarController id="4" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="431" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="L1r-5Q-Pge" kind="relationship" relationship="viewControllers" id="Jlt-Sp-P7d"/>
+                        <segue destination="VTH-4g-vA0" kind="relationship" relationship="viewControllers" id="WeX-U9-CdZ"/>
+                        <segue destination="DZU-Ih-Vn5" kind="relationship" relationship="viewControllers" id="e4Z-3N-cyE"/>
+                        <segue destination="Tgs-ec-T0S" kind="relationship" relationship="viewControllers" id="hbT-mm-LKT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1252" y="790"/>
+        </scene>
+        <!--Share View Controller - Share-->
+        <scene sceneID="nuB-U6-Lv6">
+            <objects>
+                <viewController id="Tgs-ec-T0S" customClass="THShareViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v5u-Is-gFB" customClass="THStoneView">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sh_gradient_overlay.png" id="GF5-B8-tvW">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="271"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sh_tapharmonic_logo.png" id="fYu-pC-ybS">
+                                <rect key="frame" x="41" y="31" width="159" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" id="bfj-P8-Rl2">
+                                <rect key="frame" x="226" y="20" width="328" height="221"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sh_title_text.png" id="wsZ-ew-MzL">
+                                        <rect key="frame" x="35" y="20" width="274" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sh_like_text.png" id="335-9V-esW">
+                                        <rect key="frame" x="48" y="126" width="246" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tgv-mT-ExB">
+                                        <rect key="frame" x="59" y="184" width="114" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="sh_twitter_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tweetIt:" destination="Tgs-ec-T0S" eventType="touchUpInside" id="5le-86-Qdk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WTE-aQ-4jq">
+                                        <rect key="frame" x="185" y="184" width="114" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="sh_facebook_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareIt:" destination="Tgs-ec-T0S" eventType="touchUpInside" id="qS5-Uf-S4G"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Share" id="202-0Z-SJF"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="containerView" destination="bfj-P8-Rl2" id="w07-lJ-1kx"/>
+                        <outlet property="logoImageView" destination="fYu-pC-ybS" id="y1t-Je-96W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wS-tP-qia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317" y="1644"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera_bezel.png" width="92" height="320"/>
+        <image name="camera_button_background.png" width="82" height="42"/>
+        <image name="camera_switch_icon.png" width="48" height="26"/>
+        <image name="co_export_button_icon.png" width="20" height="20"/>
+        <image name="co_mix_button_icon.png" width="20" height="17"/>
+        <image name="co_play_icon.png" width="20" height="20"/>
+        <image name="co_round_button.png" width="57" height="57"/>
+        <image name="co_square_button.png" width="45" height="41"/>
+        <image name="co_stop_icon.png" width="18" height="18"/>
+        <image name="edit_toolbar.png" width="568" height="60"/>
+        <image name="pb_ap_button_background.png" width="275" height="193"/>
+        <image name="pb_charlie_button_background.png" width="273" height="193"/>
+        <image name="pb_play_icon.png" width="72" height="72"/>
+        <image name="record_indicator_off.png" width="29" height="29"/>
+        <image name="sh_facebook_button.png" width="114" height="37"/>
+        <image name="sh_gradient_overlay.png" width="568" height="320"/>
+        <image name="sh_like_text.png" width="246" height="44"/>
+        <image name="sh_tapharmonic_logo.png" width="159" height="186"/>
+        <image name="sh_title_text.png" width="274" height="63"/>
+        <image name="sh_twitter_button.png" width="114" height="37"/>
+        <image name="tp_info_popup.png" width="85" height="35"/>
+        <image name="tp_pause_button.png" width="19" height="21"/>
+        <image name="tp_play_button.png" width="19" height="21"/>
+        <image name="tp_transport_base.png" width="407" height="47"/>
+    </resources>
+    <classes>
+        <class className="THCaptureButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THCaptureButton.h"/>
+        </class>
+        <class className="THCaptureViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THCaptureViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="startRecording:"/>
+                <relationship kind="action" name="toggleCameras:"/>
+                <relationship kind="outlet" name="previewView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="simulatorView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="toggleCameraButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="THComposeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THComposeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="exportComposition:"/>
+                <relationship kind="action" name="showMixer:"/>
+                <relationship kind="action" name="startPlayer:"/>
+                <relationship kind="action" name="stopPlayer:"/>
+                <relationship kind="outlet" name="bassScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="controlsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="drumsScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="exportButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="guitarScrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="mixButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="THPlaybackViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THPlaybackViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="localLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="localPlaybackButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="remoteLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="remotePlaybackButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="THPlayerView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THPlayerView.h"/>
+        </class>
+        <class className="THPlayerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THPlayerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closePlayer:"/>
+                <relationship kind="action" name="pauseButtonTapped:"/>
+                <relationship kind="action" name="playButtonTapped:"/>
+                <relationship kind="action" name="scrubbing:"/>
+                <relationship kind="action" name="scrubbingDidEnd:"/>
+                <relationship kind="action" name="scrubbingDidStart:"/>
+                <relationship kind="action" name="togglePlaybackControls:"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="overlayView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="playerView" candidateClass="THPlayerView"/>
+                <relationship kind="outlet" name="transportView" candidateClass="THTransportView"/>
+            </relationships>
+        </class>
+        <class className="THShareViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THShareViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareIt:"/>
+                <relationship kind="action" name="tweetIt:"/>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="logoImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="THStoneView" superclassName="THView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THStoneView.h"/>
+        </class>
+        <class className="THTransportView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THTransportView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="currentTimeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="infoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="playButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="remainingTimeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scrubberSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="scrubbingTimeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="THView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THView.h"/>
+        </class>
+        <class className="THWhiteView" superclassName="THView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/THWhiteView.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="vlc-tv-hgf"/>
+    </inferredMetricsTieBreakers>
+</document>
