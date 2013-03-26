@@ -1,30 +1,34 @@
-# AVFoundationEditor
+# AVFoundationDemos
 
-This is the companion app to Bob McCune's "<a href="http://www.slideshare.net/bobmccune/learning-avfoundation">Composing and Editing Media with AV Foundation</a>" presentation at CocoaConf.
+This is the companion app to Bob McCune's "<a href="http://www.slideshare.net/bobmccune/learning-avfoundation">Learning AV Foundation</a>" talk.  This talk was originally given at 360|iDev 2012 and was recently updated for a session at MN CocoaHeads.  
 
-The demo app is a simple video editing application patterned after iMovie for iOS.  Here's a quick description of its features:
+Here's a quick description of the demos:
 
-### Composition ###
-Audio and video clips can be arranged along a timeline.  This demostrates using AVComposition to build simple and complex temporal arrangements of AVAssets.
+### Playback ###
+The Playback demo shows how to build a custom video player using AVAsset, AVPlayerItem, AVPlayer, and AVPlayerLayer.
 
-A user can select video clips from the media picker and arrange them along the timeline.  Basic drag and drop is implemented to allow for reordering of clips and an individual clip's duration can be trimmed.
+![playback demo](https://raw.github.com/tapharmonic/AVFoundationDemos/master/ScreenShots/playback.png)
 
-The app also allows adding audio tracks to the composition.  Limited DnD support is provided to move the voiceover track within the overall timeline.
 
-### Audio Mixing ###
-Audio fades and ducking can be enabled from the settings menu.  This demonstrates using AVAudioMix to apply fades and ducking to the soundtrack.
+### Capture ###
+The Capture demo shows how to build a simple video capture app using AVCaptureSession and its related classes.
 
-### Video Transitions ###
-Video transitions can be enabled from the settings menu.  This demonstrates how to use AVVideoComposition to create simple transition effects such as cross disolves and push transitions.
+![capture demo](https://raw.github.com/tapharmonic/AVFoundationDemos/master/ScreenShots/capture.png)
 
-### Layering Content ###
-Animated titles can be enabled from the settings menu.  This demonstrates how to AVSynchronizedLayer to provide animated layering effects such as titling.
+### Compose ###
+The Compose demo is a looping audio player illustrating how to build a multi-track composition.  The key
+APIs it demos are AVMutableComposition and AVMutableAudioMix.
 
+![compose demo](https://raw.github.com/tapharmonic/AVFoundationDemos/master/ScreenShots/compose.png)
 
 ## iOS and Device Support ##
-This is an iPad-only app and requires iOS 6.
+This is an iPhone-only app and was designed and optimized for the iPhone 5.  I have made an effort to make this compatible with earlier models, but I have not tested on these actual devices.  If you encounter an issue on an older device please let me know.
+
 
 ## Credits ##
+Player transport design based on Maki Myers Miniplayer PSD:
+<a href=“http://dribbble.com/shots/882461-Miniplayer”>http://dribbble.com/shots/882461-Miniplayer</a>
+
 Application Icons from Turqois' Gemicon set (which are super awesome BTW):
 <a href=“http://gemicon.net”>http://gemicon.net</a>
 
