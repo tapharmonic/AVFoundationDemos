@@ -29,14 +29,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	[application setStatusBarHidden:YES];
 
+    self.window.tintColor = [UIColor colorWithRed:0.319 green:0.740 blue:0.964 alpha:1.000];
 	NSArray *imageNames = @[@"playback", @"capture", @"compose", @"share"];
 
 	UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
 	NSUInteger i = 0;
 	for (UITabBarController *controller in tabBarController.viewControllers) {
-		UIImage *selectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"tb_%@_selected", imageNames[i]]];
-		UIImage *unselectedImage = [UIImage imageNamed:[NSString stringWithFormat:@"tb_%@", imageNames[i]]];
-		[controller.tabBarItem setFinishedSelectedImage:selectedImage withFinishedUnselectedImage:unselectedImage];
+        controller.tabBarItem.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", imageNames[i]]];
 		i++;
 	}
 
@@ -50,18 +49,6 @@
 		bgSelectionImageName = [bgSelectionImageName stringByAppendingString:@"_ios4"];
 	}
 
-	// Change the tabbar's background and selection image through the appearance proxy
-	[[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:bgImageName]];
-	[[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:bgSelectionImageName]];
-
-	UIEdgeInsets insets;
-	insets = UIEdgeInsetsZero;
-	UIImage *navbarImage = [[UIImage imageNamed:@"app_navbar_background"] resizableImageWithCapInsets:insets];
-	[[UINavigationBar appearance] setBackgroundImage:navbarImage forBarMetrics:UIBarMetricsDefault];
-
-	insets = UIEdgeInsetsMake(10, 10, 10, 10);
-	UIImage *barButtonImage = [[UIImage imageNamed:@"dark_bar_button_background"] resizableImageWithCapInsets:insets];
-	[[UIBarButtonItem appearance] setBackgroundImage:barButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 	return YES;
 }
 

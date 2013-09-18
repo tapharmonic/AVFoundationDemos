@@ -58,6 +58,10 @@
 	}];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 // Not ready to swallow auto-layout.  Manually adjust UI to accomodate pre-iPhone 5 dimensions
 - (void)fixLayout {
 	[self scaleView:self.localPlaybackButton];

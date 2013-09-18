@@ -39,6 +39,10 @@
 	}
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (IBAction)tweetIt:(id)sender {
 	[self postMessageWithName:@"@bobmccune" toService:SLServiceTypeTwitter];
 }

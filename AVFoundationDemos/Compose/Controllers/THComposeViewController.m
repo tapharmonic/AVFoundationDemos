@@ -77,6 +77,10 @@ static const NSString *PlayerItemStatusContext;
 	[self prepareAssets];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	[self stopPlayer:nil];

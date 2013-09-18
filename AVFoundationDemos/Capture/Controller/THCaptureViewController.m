@@ -56,6 +56,10 @@
 	});
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 #pragma mark - Configure Capture Session
 
 - (void)setUpCaptureSession {

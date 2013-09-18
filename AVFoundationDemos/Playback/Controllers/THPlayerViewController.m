@@ -54,6 +54,10 @@ static const NSString *PlayerItemStatusContext;
 	[self prepareToPlay];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
 	if (self.itemEndObserver) {
 		[[NSNotificationCenter defaultCenter] removeObserver:self.itemEndObserver
