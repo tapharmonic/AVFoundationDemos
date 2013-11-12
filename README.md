@@ -1,5 +1,7 @@
 # AVFoundationDemos
 
+#### Bob McCune's new book, <a href="http://www.bobmccune.com/2013/11/08/learning-av-foundation-book-in-development/">Learning AV Foundation</a>, is currently under development.
+
 This is the companion app to Bob McCune's "<a href="http://www.slideshare.net/bobmccune/learning-avfoundation">Learning AV Foundation</a>" talk.  This talk was originally given at 360|iDev 2012 and was recently updated for a session at MN CocoaHeads.  
 
 Here's a quick description of the demos:
