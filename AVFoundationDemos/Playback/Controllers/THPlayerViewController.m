@@ -83,20 +83,21 @@ static const NSString *PlayerItemStatusContext;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if (context == &PlayerItemStatusContext) {
-		dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.playerItem.status == AVPlayerItemStatusReadyToPlay) {
+            [self.playerItem removeObserver:self forKeyPath:STATUS_KEYPATH context:&PlayerItemStatusContext];
+            dispatch_async(dispatch_get_main_queue(), ^{
 
-			[self addPlayerItemTimeObserver];
+                [self addPlayerItemTimeObserver];
 
-			if (self.autoplayContent) {
-				[self.player play];
-				self.transportView.pauseButton.hidden = NO;
-				self.transportView.playButton.hidden = YES;
-			} else {
-				[self pauseButtonTapped:nil];
-			}
-
-			[self.playerItem removeObserver:self forKeyPath:STATUS_KEYPATH];
-		});
+                if (self.autoplayContent) {
+                    [self.player play];
+                    self.transportView.pauseButton.hidden = NO;
+                    self.transportView.playButton.hidden = YES;
+                } else {
+                    [self pauseButtonTapped:nil];
+                }
+            });
+        }
 	}
 }
 
