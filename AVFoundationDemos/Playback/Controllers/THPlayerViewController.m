@@ -153,7 +153,7 @@ static const NSString *PlayerItemStatusContext;
 - (NSString *)formatSeconds:(NSInteger)value {
 	NSInteger seconds = value % 60;
 	NSInteger minutes = value / 60;
-	return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+	return [NSString stringWithFormat:@"%02ld:%02ld", (long)minutes, (long)seconds];
 }
 
 #pragma mark - Scrubber Event Handling

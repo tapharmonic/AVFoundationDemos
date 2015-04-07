@@ -27,7 +27,7 @@
 @implementation UIColor (THAdditions)
 
 - (UIColor *)lighterColor {
-	float hue, saturation, brightness, alpha;
+	CGFloat hue, saturation, brightness, alpha;
 	if ([self getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha]) {
 		return [UIColor colorWithHue:hue saturation:saturation brightness:MIN(brightness * 1.1, 1.0) alpha:alpha];
 	}
@@ -35,7 +35,7 @@
 }
 
 - (UIColor *)darkerColor {
-	float hue, saturation, brightness, alpha;
+	CGFloat hue, saturation, brightness, alpha;
 	if ([self getHue:&hue saturation:&saturation brightness:&brightness alpha:&alpha]) {
 		return [UIColor colorWithHue:hue saturation:saturation brightness:brightness * 0.90 alpha:alpha];
 	}

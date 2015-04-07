@@ -93,7 +93,7 @@ static const NSString *PlayerItemStatusContext;
 	scrollView.contentSize = CGSizeMake((trackWidth) * [loops count], scrollView.frame.size.height);
 	scrollView.showsHorizontalScrollIndicator = NO;
 	CGFloat currentX = 0;
-	for (AVAsset *loop in loops) {
+    for (NSUInteger i = 0; i < loops.count; i++) {
 		CGRect rect = CGRectMake(currentX, 0, trackWidth, TRACK_HEIGHT);
 		THTrackView *trackView = [[THTrackView alloc] initWithFrame:rect];
 		trackView.trackColor = trackColor;
@@ -216,7 +216,7 @@ static const NSString *PlayerItemStatusContext;
 
 - (NSArray *)defaultAudioMixInputParametersForTracks:(NSArray *)tracks {
 	NSMutableArray *parametersArray = [NSMutableArray arrayWithCapacity:tracks.count];
-	for (int i = 0, count = tracks.count; i < count; i++) {
+	for (NSUInteger i = 0, count = tracks.count; i < count; i++) {
 		AVAssetTrack *track = [tracks objectAtIndex:i];
 		AVMutableAudioMixInputParameters *params = [AVMutableAudioMixInputParameters audioMixInputParametersWithTrack:track];
 		// Enable the first track.  Mute the others.
